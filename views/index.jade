@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  .blank-space
+  .container
+  .row
+    .col-md-6
+      .info
+        h5
+          | Install IPA is a tool for developers to deploy Development and In-house applications using OTA builds.
+        ol
+          li  Upload the iOS application.
+          li  Send the link to your testers, clients, friends or even use it yourself.
+          li  Open the link in the browser on the device and click on install.
+
+    .col-md-6
+      .card.text-center
+        .card-header
+          | Welcome to #{title}
+        .card-body
+          form#fileUpload(name="ipaUpload", method="POST", action="/", enctype="multipart/form-data")
+            input#userInputFile(type="file", name="file")
+            button.btn.btn-primary(type="submit") Upload 
+        .card-footer.text-muted
+          .error Select IAP file
+  

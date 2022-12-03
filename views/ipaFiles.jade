@@ -1,0 +1,31 @@
+extends layout
+
+block content 
+  .blank-space
+  .col-md-12
+    .card-deck.mb-3.text-center
+      .card.mb-4.shadow-sm
+        .card-header
+          h4.my-0.font-weight-normal List of all builds
+        .card-body
+          table.table.table-striped.table-bordered
+            thead
+              tr
+                th(scope='col') #
+                th(scope='col') Name
+                th(scope='col') Package
+                th(scope='col') Build
+                th(scope='col') Date
+                th(scope='col') Action
+            tbody
+              each val, index in iapInfo
+                tr
+                  th(scope='row') #{index + 1}
+                  td #{val.name}
+                  td #{val.package}
+                  td #{val.version} (#{val.build})
+                  td #{val.date}
+                  td 
+                    a(href="#{val.currentUrl}").btn.btn-link(type='button') View
+        //- .card-footer.text-muted 
+   

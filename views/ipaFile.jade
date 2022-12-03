@@ -1,0 +1,31 @@
+extends layout
+
+block content 
+  .blank-space
+  
+  .row
+    .col-md-6
+      .card-deck.mb-3.text-center
+        .card.mb-4.shadow-sm
+          .card-header
+            h4.my-0.font-weight-normal #{infoIPA.name}
+          .card-body
+            img(src=infoIPA.iconUrl)
+
+            ul.list-unstyled.mt-3.mb-4
+              li #{infoIPA.package}
+              li #{infoIPA.version}(#{infoIPA.build}) 
+            a(href="#{infoIPA.url}").btn.btn-lg.btn-block.btn-outline-primary(type='button') Install
+           
+          .card-footer.text-muted #{infoIPA.date}
+    .col-md-6
+       .card-deck.mb-3.text-center
+        .card.mb-4.shadow-sm
+          .card-header
+            h4#qr-url.my-0.font-weight-normal #{infoIPA.currentUrl}
+          .card-body
+            .qrcode
+              #qrcode
+          .card-footer.text-muted 
+            a(href="#{infoIPA.ipaURL}").btn.btn-lg.btn-block.btn-outline-primary(type='button') Download File
+   
